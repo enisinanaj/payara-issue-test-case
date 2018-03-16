@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>hib-project</artifactId>
+		<groupId>com.sia</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>com.sia</groupId>
+	<artifactId>hib-project-ear</artifactId>
+	<packaging>ear</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>hib-project-ear JavaEE6 Assembly</name>
+	<url>http://maven.apache.org</url>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<version>6</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<webModule>
+							<groupId>com.sia</groupId>
+							<artifactId>hib-project-web</artifactId>
+							<contextRoot>/test</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>hib-project</finalName>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-6.0</artifactId>
+			<version>1.0.0.Final</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+				<groupId>javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>3.3</version>
+			</dependency>
+		<dependency>
+			<groupId>com.sia</groupId>
+			<artifactId>hib-project-ejb</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.sia</groupId>
+			<artifactId>hib-project-web</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+</project>
+
